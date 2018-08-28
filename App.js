@@ -14,7 +14,9 @@ const API_KEY = "adee16e4cb728900d8d2e1fab60aabfe";
 export default class App extends Component {
   state = {
     isLoaded: false,
-    error: null
+    error: null,
+    temperature: null,
+    name: null
   };
   componentDidMount() {
     // Captures the geolocation when component did mount;
@@ -36,6 +38,11 @@ export default class App extends Component {
       .then(response => response.json())
       .then(json => {
         console.log(json);
+        this.setState({
+          temperature: json.main.temp,
+          name: json.weather[0].main,
+          isLoaded: true
+        });
       });
   };
   render() {
