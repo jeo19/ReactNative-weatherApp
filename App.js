@@ -4,9 +4,11 @@ import {
   Text,
   View,
   ActivityIndicator,
-  Platform
+  Platform,
+  StatusBar
 } from "react-native";
 import Weather from "./Weather";
+import { Ionicons } from "@expo/vector-icons";
 
 export default class App extends Component {
   state = {
@@ -16,6 +18,7 @@ export default class App extends Component {
     const { isLoaded } = this.state;
     return (
       <View style={styles.container}>
+        <StatusBar hidden={true} />
         {isLoaded ? (
           <Weather />
         ) : (
