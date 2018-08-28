@@ -1,44 +1,50 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo";
-import Ionicons from "./node_modules/@expo/vector-icons/Ionicons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import PropTypes from "prop-types";
 const weatherCases = {
   Rain: {
     color: ["#00C6FB", "#005BEA"],
     title: "Raining like a MF",
     subtitle: "For more info outside",
-    icon: "ios-rainy"
+    icon: "weather-rainy"
   },
   Clear: {
     color: ["#fee140", "#fa709a"],
     title: "Sunny as fuck",
     subtitle: "Go get your ass burnt",
-    icon: "ios-sunny"
+    icon: "weather-sunny"
   },
   Thunderstorm: {
     color: ["#84fab0", "#8fd3f4"],
     title: "Thunderstorm in the house",
     subtitle: "Actually, outside of the house",
-    icon: "ios-thunderstorm"
+    icon: "weather-lightning"
   },
   Clouds: {
     color: ["#BDBBBE", "#9D9EA3"],
     title: "Clouds",
     subtitle: "I know, fucking boring",
-    icon: "ios-cloudy"
+    icon: "weather-cloudy"
   },
   Snow: {
     color: ["#d9afd9", "#97d9e1"],
     title: "Cold as balls",
     subtitle: "Do you want to build snowman? fuck no",
-    icon: "ios-snow"
+    icon: "weather-snowy"
   },
   Drizzle: {
     color: ["#74ebd5", "#9face6"],
     title: "Drizzle",
     subtitle: "Is like rain, but gay ♨",
-    icon: "ios-rainy-outline"
+    icon: "weather-hail"
+  },
+  Haze: {
+    color: ["#74ebd5", "#9face6"],
+    title: "Drizzle",
+    subtitle: "Is like rain, but gay ♨",
+    icon: "weather-fog"
   }
 };
 
@@ -49,7 +55,7 @@ function Weather({ weatherName, temp }) {
       style={styles.container}
     >
       <View style={styles.upper}>
-        <Ionicons
+        <MaterialCommunityIcons
           color="white"
           size={144}
           name={weatherCases[weatherName].icon}
